@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import TodoForm from './form.js';
 import TodoList from './list.js';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
 import './todo.scss';
 
@@ -66,24 +71,36 @@ const ToDo = () => {
 
   return (
     <>
+      <Container>
+        <Row>
+        <Col md={6}>
       <header>
-        <h4>
-          There are {list.filter(item => !item.complete).length} Items To Complete
-        </h4>
+          <Navbar bg="dark" variant="dark">
+          <Nav>
+            <Navbar.Brand>
+            To Do List Manager ({list.filter(item => !item.complete).length})</Navbar.Brand>
+          </Nav>
+          </Navbar>
       </header>
-
+        </Col>
+        </Row>
+      </Container>
       <section className="todo">
-
+      <Row>
+        <Col md={5}>
         <div>
           <TodoForm handleSubmit={_addItem} />
         </div>
-
+        </Col>
+        <Col md={7}>
         <div>
           <TodoList
             list={list}
             handleComplete={_toggleComplete}
-          />
+            />
         </div>
+        </Col>
+      </Row>
       </section>
     </>
   );

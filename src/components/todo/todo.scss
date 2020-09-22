@@ -11,30 +11,6 @@ main{
     min-height: 80vh;
 }
 
-// form
-.card{
- margin-left: -20px;
- margin-right: 10px;
-
-}
-.todo-details {
-    display:flex;
-    flex-direction:column;
-
-    header {
-        display:flex;
-        flex-direction:row;
-        justify-content:space-between;
-        padding:.5em 1em;
-    }
-
-    .item {
-        flex:1;
-        padding: 1em;
-    }
-
-}
-
 .todo {
 
     display:flex;
@@ -43,11 +19,6 @@ main{
     margin: 2em;
 
     form {
-
-        display:flex;
-        flex-direction:column;
-        margin-right: 2em;
-
         label {
             display: flex;
             flex-direction:column;
@@ -56,60 +27,12 @@ main{
     }
 
     ul {
-        list-style-type:none;
-        margin:0;
-        padding:0;
 
         li {
-
-            align-items: center;
-            display:flex;
-            flex-direction:row;
-            font-size: .75em;
-            margin: .75em .5em;
-
-            &.complete-true {
-              span {
-                background: pink;
-                text-decoration:line-through;
-                &:hover {
-                   background: seagreen;
-                }
-              }
-            }
-
-            span {
-                background: #e0e0e0;
-                cursor:pointer;
-                &:hover {
-                    background: pink;
-                }
-            }
-             span, input {
-                 border: .5px solid #eee;
-                 display:inline-block;
-                 padding: .2em .25em;
-                 width: 300px;
-             }
-
-            button {
-                background: transparent;
-                border:none;
-                color:blue;
-                cursor:pointer;
-                padding:0;
-                margin: 0 .75em;
-            }
 
         }
     }
 
-}
-
-//Header
-header h4{
-    margin-left: 10px;
-    margin-top: 5px;
 }
 
 // Footer

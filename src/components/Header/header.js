@@ -4,9 +4,8 @@ import Nav from 'react-bootstrap/Nav'
 
 export default props => (
   <header>
-    <Navbar bg="dark" variant="primary">
-      <Nav className="mr-auto">
-        {/* <Navbar.Brand href="home">React-Bootstrap</Navbar.Brand> */}
+    <Navbar bg="primary" variant="dark">
+      <Nav>
         <Nav.Link variant="light">Home</Nav.Link>
         <Nav.Link variant="light">Login</Nav.Link>
       </Nav>

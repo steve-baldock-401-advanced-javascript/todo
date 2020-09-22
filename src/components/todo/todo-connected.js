@@ -67,9 +67,9 @@ const ToDo = () => {
   return (
     <>
       <header>
-        <h2>
+        <h4>
           There are {list.filter(item => !item.complete).length} Items To Complete
-        </h2>
+        </h4>
       </header>
 
       <section className="todo">

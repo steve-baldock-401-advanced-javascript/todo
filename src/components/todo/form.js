@@ -18,8 +18,8 @@ const TodoForm = (props) =>{
   }
 
     return (
-      <Card>
-        <h3>Add Item</h3>
+      <Card class="card">
+        <h4>Add Item</h4>
         <Form onSubmit={ handleSubmit }>
           <Form.Group>
 

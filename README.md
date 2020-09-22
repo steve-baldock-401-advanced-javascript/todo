@@ -1,4 +1,21 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Seattle Javascript-401d37
+
+## To Do System Overview
+A Web Application for securely managing a To Do List
+
+## UML Diagram
+![uml diagram](public/uml.png)
+
+## Technical Requirements
+* React
+* ES6 Classes
+* User Login & Permissions
+* Local Storage/Cookies for storing login status
+* Local Storage/Cookies for storing user preferences
+* Superagent of Axios for performing API requests
+* React Bootstrap for styling
+* TDD using Jest
+* Deployment to cloud provider
 
 ## Available Scripts
 

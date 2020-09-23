@@ -10,21 +10,32 @@ import Col from 'react-bootstrap/Col';
       <ListGroup>
         {props.list.map(item => (
           <ListGroup.Item 
-            key={item._id}
-          >
-            <Button className="rounded-pill" variant={ item.complete ? (('Complete'), "success" ) : (('Incomplete'), "danger")} onClick={() => props.handleComplete(item._id)}>Complete
+            key={item._id}>
+            <Row>
+            <Col md={3}>
+            <Button className="rounded-pill" variant={item.complete ? "success" : "danger"} onClick={() => props.toggleComplete(item._id)}>{item.complete ? "Complete" : "Pending"}
             </Button>
-            <span class="ml-5">{`${item.assignee}`}
+            </Col>
+            <Col md={4}>
+            <span className="ml-3">{`${item.assignee}`}
             </span>
+            </Col>
+            <Col md={3}> 
+            </Col>
+            <Col>
+            <span onClick={() => props.deleteItem(item._id)}>X
+            </span>
+            </Col>
+            </Row>
             <hr></hr>
             <Row>
-            <span class="ml-3">{`${item.text}`}
+            <span className="ml-3">{`${item.text}`}
             </span>
             </Row>
             <Row>
-            <Col md={9}>
+            <Col md={7}>
             </Col>
-            <span>{`Difficulty: ${item.difficulty}`}
+            <span className="ml-5">{`Difficulty: ${item.difficult}`}
             </span>
             </Row>
           </ListGroup.Item>

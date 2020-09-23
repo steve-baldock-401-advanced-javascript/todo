@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+// import useForm from './use-form';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+// const [handleSubmit, handleInputChange] = useForm(onSubmit);
+
 const TodoForm = (props) =>{
+  
   const [item, setItem] = useState({});
+  // const [handleSubmit, handleInputChange] = useForm()
 
   const handleInputChange = e => {
   setItem({...item, [e.target.name]: e.target.value });
@@ -19,6 +24,7 @@ const TodoForm = (props) =>{
 
     return (
       <Card class="card">
+
         <h4>Add To Do Item</h4>
         <Form onSubmit={ handleSubmit }>
           <Form.Group>

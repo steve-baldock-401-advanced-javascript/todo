@@ -1,7 +1,5 @@
 import React from 'react';
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import '../todo/todo.scss';
+import './todo/todo.scss';
 
 
 export default props => (

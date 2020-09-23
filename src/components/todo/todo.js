@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import TodoForm from './form.js';
-import TodoList from './list.js';
-
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
+import TodoForm from '../useForm/form.js';
+import TodoList from '../list.js';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import axios from 'axios';
 
 
 import './todo.scss';
@@ -33,56 +32,46 @@ function ToDo() {
 
   };
 
-  useEffect(() => {
-    let updatedList = [
-      { _id: 1, complete: false, text: 'Clean the Kitchen', difficulty: 3, assignee: 'Person A' },
-      { _id: 2, complete: false, text: 'Do the Laundry', difficulty: 2, assignee: 'Person A' },
-      { _id: 3, complete: false, text: 'Walk the Dog', difficulty: 4, assignee: 'Person B' },
-      { _id: 4, complete: true, text: 'Do Homework', difficulty: 3, assignee: 'Person C' },
-      { _id: 5, complete: false, text: 'Take a Nap', difficulty: 1, assignee: 'Person B' },
-    ];
+  useEffect(async() => {
+      const response = await axios.get('http://localhost:3001/api/v1/todos');
+      setList(response.data.results);
+    }, []);
 
-    setList(updatedList);
-  }, []);
-
-  return (
-    <Container>
-      <Row>
-        <Col>
-        <header>
-          <Navbar>
-            <Nav bg="dark">
-          <h4>
-            ToDo List Manager ({list.length})
-          </h4>
-
+    return (
+      <>
+        <Row>
+          <Col md={2}>
+          </Col>
+          <Col md={8}>
+          <header class="mb-1">
+            <Navbar bg="dark" variant="dark">
+            <Nav>
+              <Navbar.Brand>
+              To Do List Manager ({list.filter(item => !item.complete).length})</Navbar.Brand>
             </Nav>
-          </Navbar>
-        </header>
-        </Col>
+            </Navbar>
+          </header>
+          </Col>
+          <Col md={2}>
+          </Col>
         </Row>
         <Row>
-          <Col>
-
-        <section className="todo">
-
-          <div>
+          <Col md={2}>
+          </Col>
+          <Col md={3}>
             <TodoForm handleSubmit={addItem} />
-          </div>
-
-          <div>
+          </Col>
+          <Col md={5}>
             <TodoList
               list={list}
               handleComplete={toggleComplete}
               />
-          </div>
-        </section>
-              </Col>
-
-      </Row>
-    </Container>
-  );
+          </Col>
+             <Col md={2}>
+          </Col>
+        </Row>
+      </>
+    );
 }
-
 
 export default ToDo;

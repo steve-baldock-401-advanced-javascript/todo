@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import TodoForm from './form.js';
-import TodoList from './list.js';
-import Container from 'react-bootstrap/Container';
+import TodoForm from '../useForm/form.js';
+import TodoList from '../list.js';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+// import axios from 'axios';
 
 import './todo.scss';
 
 const todoAPI = 'https://api-js401.herokuapp.com/api/v1/todo';
-
 
 const ToDo = () => {
 
@@ -71,37 +70,37 @@ const ToDo = () => {
 
   return (
     <>
-      <Container>
-        <Row>
-        <Col md={6}>
-      <header>
+      <Row>
+        <Col md={2}>
+        </Col>
+        <Col md={8}>
+        <header class="mb-1">
           <Navbar bg="dark" variant="dark">
           <Nav>
             <Navbar.Brand>
             To Do List Manager ({list.filter(item => !item.complete).length})</Navbar.Brand>
           </Nav>
           </Navbar>
-      </header>
+        </header>
         </Col>
-        </Row>
-      </Container>
-      <section className="todo">
+        <Col md={2}>
+        </Col>
+      </Row>
       <Row>
-        <Col md={5}>
-        <div>
-          <TodoForm handleSubmit={_addItem} />
-        </div>
+        <Col md={2}>
         </Col>
-        <Col md={7}>
-        <div>
+        <Col md={3}>
+          <TodoForm handleSubmit={_addItem} />
+        </Col>
+        <Col md={5}>
           <TodoList
             list={list}
             handleComplete={_toggleComplete}
             />
-        </div>
+        </Col>
+           <Col md={2}>
         </Col>
       </Row>
-      </section>
     </>
   );
 };

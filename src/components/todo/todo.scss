@@ -1,45 +1,20 @@
 @import "~bootstrap/scss/bootstrap";
 
-body, html {
-    min-height: 100%;
-    margin: 0;
-    padding:0;
-    width: 100%;
-}
-
 main{
-    min-height: 80vh;
-}
-
-.todo {
-
-    display:flex;
-    flex-direction:row;
-    justify-content: flex-start;
-    margin: 2em;
-
-    form {
-        label {
-            display: flex;
-            flex-direction:column;
-            margin-bottom: 1em;
-        }
-    }
-
-    ul {
-
-        li {
-
-        }
-    }
-
+    margin-left: 20px;
+    height: 100vh;
 }
 
 // Footer
-footer p{
-    background-color: rgb(40, 38, 38);
-    color: rgb(168, 164, 164);
-    margin: 0;
-    padding: 0;
-    text-align: center;
+// footer p{
+//     background-color: rgb(122, 20, 20);
+//     color: rgb(168, 164, 164);
+//     margin: 0;
+//     padding: 0;
+//     text-align: center;
+// }
+
+.mb-1{
+    margin-bottom: 1em;
+    margin-top: 1em;
 }

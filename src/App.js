@@ -1,7 +1,8 @@
 import React from 'react';
-import Header from './components/Header/header.js';
+import Header from './components/header.js';
 import ToDo from './components/todo/todo-connected.js' 
-import Footer from './components/Footer/footer.js';
+// import ToDo from './components/todo/todo.js';
+// import Footer from './components/footer.js';
 import './App.css';
 import './components/todo/todo.scss';
 
@@ -12,7 +13,7 @@ function App() {
     <main>
       <ToDo />
     </main>
-    <Footer />
+    {/* <Footer /> */}
     </>
   );
 }

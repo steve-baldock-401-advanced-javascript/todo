@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const useForm = (props, callback) => {
 
@@ -13,11 +13,11 @@ const useForm = (props, callback) => {
   };
 
   const handleInputChange = e => {
-    e.persist();
-    setItem(item => ({...item, [e.target.name]: e.target.value }));
+    setItem({...item, [e.target.name]: e.target.value });
+
   }
 
-  return [handleSubmit, handleInputChange, item];
+  return {handleSubmit, handleInputChange, item};
 };
 
 export default useForm;

@@ -17,7 +17,7 @@ function submitForm (task) {
       <Card className="card">
 
         <h4 className="ml-1">Add To Do Item</h4>
-        <Form onSubmit={ handleSubmit }>
+        <Form onSubmit={ submitForm }>
           <Form.Group>
 
           <Form.Label className="ml-1">

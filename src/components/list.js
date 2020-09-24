@@ -33,7 +33,7 @@ import Col from 'react-bootstrap/Col';
             </span>
             </Row>
             <Row>
-            <Col md={7}>
+            <Col md={8}>
             </Col>
             <span className="ml-5">{`Difficulty: ${item.difficult}`}
             </span>

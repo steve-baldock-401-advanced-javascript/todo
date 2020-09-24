@@ -12,7 +12,7 @@ function ToDo() {
 
   // State
   const {list, addItem, deleteItem, toggleComplete} = useAjax('http://localhost:3001/api/v1/todos')
- 
+
     return (
       <>
         <Row>

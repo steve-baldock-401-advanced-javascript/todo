@@ -1,15 +1,14 @@
 import { useState } from 'react';
 
-const useForm = (props, callback) => {
+const useForm = (callback) => {
 
   const [item, setItem] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
     e.target.reset();
-    props.handleSubmit(item);
-    setItem({});
     callback(item);
+    setItem({});
   };
 
   const handleInputChange = e => {
@@ -17,7 +16,7 @@ const useForm = (props, callback) => {
 
   }
 
-  return {handleSubmit, handleInputChange, item};
+  return [ handleSubmit, handleInputChange, item ];
 };
 
 export default useForm;

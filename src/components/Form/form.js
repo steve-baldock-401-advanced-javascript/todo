@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-// import useForm from './use-form';
+import React from 'react';
+import useForm from '../hook/use-form';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -7,19 +7,11 @@ import Button from 'react-bootstrap/Button';
 
 const TodoForm = (props) =>{
   
-  const [item, setItem] = useState({});
-  // const {item, handleSubmit, handleInputChange} = useForm()
+  const  [ handleSubmit, handleInputChange ]= useForm(submitForm)
 
-  const handleInputChange = e => {
-  setItem({...item, [e.target.name]: e.target.value });
-  }
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    e.target.reset();
-    props.handleSubmit(item);
-    setItem({});
-  }
+function submitForm (task) {
+  props.handleSubmit(task);
+}
 
     return (
       <Card className="card">

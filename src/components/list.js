@@ -3,6 +3,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+// import { todoContext} from '../components/context/context';
 
 
   const TodoList = (props) => {
@@ -17,7 +18,7 @@ import Col from 'react-bootstrap/Col';
             </Button>
             </Col>
             <Col md={4}>
-            <span className="ml-3">{`${item.assignee}`}
+            <span className="ml-5">{`${item.assignee}`}
             </span>
             </Col>
             <Col md={3}> 

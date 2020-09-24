@@ -1,18 +1,37 @@
-// provide context to components that need access to state
-
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 export const todoContext = React.createContext();
 
-function toDoProvider(props) {
-  // Context will be responsible for providing state, no longer at todo
-  const [list, setList] = useState('raw');
+const ToDoProvider = (props) => {
+
+  const [showComplete, setShowComplete] = useState(true);
+  const [showItems, setShowItems] = useState(5);
+  const [sortItems, setSortItems] = useState('difficulty');
+
+  const toggleComplete = () => { setShowComplete(!showComplete) }
+
+  const displayItems = (num) => {
+    setShowItems(num)
+  }
+
+  const sortThem = (str) => {
+    setSortItems(str)
+  }
 
   const state = {
-    item,
+    showComplete,
+    showItems,
+    sortItems,
+    toggleComplete,
+    displayItems,
+    sortThem
   };
-  
-  return(
 
+  return(
+    <todoContext.Provider value={state} >
+      {props.children}
+    </todoContext.Provider>
   )
 
 }
+
+export default ToDoProvider

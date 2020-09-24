@@ -7,7 +7,6 @@ const useAjax = (url) => {
 const [list, setList] = useState([])
 
 const addItem = async (item) => {
-  console.log(item)
   item.difficulty = parseInt(item.diffculty) || 1;
   item.complete = false;
   const response = await axios.post(url,item)
@@ -16,6 +15,7 @@ const addItem = async (item) => {
 
 const deleteItem = async (id) => {
    await axios.delete(`${url}/${id}`)
+   // search array, find it, get rid of it
 }
   
 const toggleComplete = async (id) => {

@@ -18,7 +18,7 @@ import Col from 'react-bootstrap/Col';
             </Button>
             </Col>
             <Col md={4}>
-            <span className="ml-3">{`${item.assignee}`}
+            <span className="ml-5">{`${item.assignee}`}
             </span>
             </Col>
             <Col md={3}> 
@@ -34,7 +34,7 @@ import Col from 'react-bootstrap/Col';
             </span>
             </Row>
             <Row>
-            <Col md={8}>
+            <Col md={7}>
             </Col>
             <span className="ml-5">{`Difficulty: ${item.difficult}`}
             </span>

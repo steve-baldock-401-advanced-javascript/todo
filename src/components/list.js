@@ -1,18 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
-import Button from 'react-bootstrap/Button';
+import { todoContext } from '../components/context/context';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-// import { todoContext} from '../components/context/context';
+import Button from 'react-bootstrap/Button';
 
-
-  const TodoList = (props) => {
-    return (
-      <ListGroup>
-        {props.list.map(item => (
-          <ListGroup.Item 
-            key={item._id}>
-            <Row>
+const TodoList = (props) => {
+  const ctx = useContext(todoContext)
+  let list = props.list.filter(item => {
+    if(ctx.showComplete){
+      if(item.complete){
+        return null
+      } else {
+        return item
+      } 
+      } else {
+        return item
+      }
+  })
+  list = list.sort((a,b) => a[ctx.sortBy] - b[ctx.sortBy] ? -1 : 1)
+  return (
+    <ListGroup>
+      {list.map((item, i) => {
+        if(i < ctx.showItems){
+          return(
+        <ListGroup.Item 
+          key={item._id}>
+         <Row>
             <Col md={3}>
             <Button className="rounded-pill" variant={item.complete ? "success" : "danger"} onClick={() => props.toggleComplete(item._id)}>{item.complete ? "Complete" : "Pending"}
             </Button>
@@ -39,10 +53,10 @@ import Col from 'react-bootstrap/Col';
             <span className="ml-5">{`Difficulty: ${item.difficult}`}
             </span>
             </Row>
-          </ListGroup.Item>
-        ))}
-      </ListGroup>
-    );
-  }
+        </ListGroup.Item>
+    )}})}
+    </ListGroup>
+  );
+}
 
 export default TodoList;

@@ -11,6 +11,22 @@ import './todo.scss';
 
 function ToDo() {
 
+  const styles = {
+    nav: {
+      display: 'flex',
+      justifyContent: 'space-between',
+    },
+    links: {
+      display: 'flex',
+      listStyleType: 'none',
+      margin: 0,
+      padding: 0,
+    },
+    item: {
+      marginRight: '1em',
+    },
+  };
+
   // State
   const {list, addItem, deleteItem, toggleComplete} = useAjax('http://localhost:3001/api/v1/todos')
 
@@ -22,7 +38,7 @@ function ToDo() {
           <Col md={7}>
           <header className="mb-3 mt-3">
             <Navbar bg="dark" variant="dark">
-            <Nav>
+            <Nav style={styles.nav}>
               <Navbar.Brand>
               To Do List Manager ({list.filter(item => !item.complete).length})</Navbar.Brand>
             </Nav>

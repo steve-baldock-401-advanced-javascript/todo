@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 export const todoContext = React.createContext();
 
 const ToDoProvider = (props) => {
 
-  const [showComplete, setShowComplete] = useState(true);
+  const [showComplete, setShowComplete] = useState(false);
   const [showItems, setShowItems] = useState(5);
   const [sortItems, setSortItems] = useState('difficulty');
 

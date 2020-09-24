@@ -4,7 +4,6 @@ import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-
 const TodoForm = (props) =>{
   
   const  [ handleSubmit, handleInputChange ]= useForm(submitForm)
@@ -33,7 +32,7 @@ function submitForm (task) {
           <Form.Label className="ml-1">
             Difficulty Rating
           </Form.Label>
-            <Form.Control defaultValue="1" type="range" min="1" max="5" name="difficulty" onChange={ handleInputChange } />
+            <Form.Control defaultValue="1" type="range" min="1" max="5" name="difficult" onChange={ handleInputChange } />
           <Form.Label className="ml-1">
             Assigned To
           </Form.Label>

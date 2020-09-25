@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext } from 'react';
 import TodoForm from '../Form/form.js';
 import TodoList from '../list.js';
 import Row from 'react-bootstrap/Row';
@@ -8,8 +8,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import useAjax from '../hook/ajax';
 import './todo.scss';
+import Button from 'react-bootstrap/Button';
+import { todoContext } from '../context/context';
 
 function ToDo() {
+  const ctx = useContext(todoContext)
 
   const styles = {
     nav: {
@@ -60,6 +63,13 @@ function ToDo() {
               toggleComplete={toggleComplete}
               deleteItem={deleteItem}
               />
+            <Row>
+              <Col md={10}></Col>
+              <Col>
+            <Button variant="dark" onClick={ctx.toggleComplete}>{ctx.showComplete ? 'Show complete' : 'Hide Complete'}
+            </Button>
+            </Col>
+            </Row>
           </Col>
              <Col md={2}>
           </Col>

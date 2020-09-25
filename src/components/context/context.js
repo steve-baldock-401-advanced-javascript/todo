@@ -1,7 +1,7 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 export const todoContext = React.createContext();
 
-const ToDoProvider = (props) => {
+ const ToDoProvider = (props) => {
 
   const [showComplete, setShowComplete] = useState(false);
   const [showItems, setShowItems] = useState(5);

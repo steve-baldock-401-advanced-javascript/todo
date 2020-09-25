@@ -28,7 +28,7 @@ const TodoList = (props) => {
           key={item._id}>
          <Row>
             <Col md={3}>
-            <Button className="rounded-pill" variant={item.complete ? "success" : "danger"} onClick={() => props.toggleComplete(item._id)}>{item.complete ? "Complete" : "Pending"}
+            <Button size="sm" className="rounded-pill" variant={item.complete ? "success" : "danger"} onClick={() => props.toggleComplete(item._id)}>{item.complete ? "Complete" : "Pending"}
             </Button>
             </Col>
             <Col md={4}>
@@ -44,11 +44,9 @@ const TodoList = (props) => {
             </Row>
             <hr></hr>
             <Row>
-            <span className="ml-3">{`${item.text}`}
-            </span>
-            </Row>
-            <Row>
             <Col md={7}>
+            <span className="ml-2">{`${item.text}`}
+            </span>
             </Col>
             <span className="ml-5">{`Difficulty: ${item.difficult}`}
             </span>
@@ -60,3 +58,5 @@ const TodoList = (props) => {
 }
 
 export default TodoList;
+            // <Button size='sm' variant={item.complete ? "success" : "danger"} onClick={() => props.toggleComplete(item._id)}>{item.complete ? "Complete" : "Pending"}
+            // </Button>
